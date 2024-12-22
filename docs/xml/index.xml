@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.12.0" xml:lang="en-US">
+  <compound refid="shell_8c" kind="file"><name>shell.c</name>
+    <member refid="shell_8c_1abf767eacd9939601a1d625f9e988f649" kind="variable"><name>builtIn_str</name></member>
+    <member refid="shell_8c_1aa69e593df077eba1b3ebca24fc4afe05" kind="variable"><name>builtin_func</name></member>
+    <member refid="shell_8c_1aa2deaf0f63ca4a73a37b86d05678fb46" kind="function"><name>main_loop</name></member>
+    <member refid="shell_8c_1adda5e3a2405dd65eb3c7e62f94cf7905" kind="function"><name>main_cd</name></member>
+    <member refid="shell_8c_1ac9a6184ab875fdcaf47e9f2532bacccd" kind="function"><name>main_exit</name></member>
+    <member refid="shell_8c_1a78da12091fd568d5a2bdf0209f9bdf4d" kind="function"><name>main_size_builtIn</name></member>
+    <member refid="shell_8c_1a11e65f8c532229a11c69bbc450eed1c7" kind="function"><name>main_read_line</name></member>
+    <member refid="shell_8c_1a4bf255668fbc487f01bccf32b3ee81b7" kind="function"><name>main_split_line</name></member>
+    <member refid="shell_8c_1a9f2c306723de2e72f49e4eb6be1e8568" kind="function"><name>main_launch</name></member>
+    <member refid="shell_8c_1a77cf9ccab112bc85351252644ffd6680" kind="function"><name>main_execute</name></member>
+    <member refid="shell_8c_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+</doxygenindex>

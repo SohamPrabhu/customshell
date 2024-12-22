@@ -1,0 +1,436 @@
+\doxysection{shell.\+c File Reference}
+\hypertarget{shell_8c}{}\label{shell_8c}\index{shell.c@{shell.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{shell_8c_aa2deaf0f63ca4a73a37b86d05678fb46}{main\+\_\+loop}} ()
+\begin{DoxyCompactList}\small\item\em The main loop of the shell program. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{shell_8c_adda5e3a2405dd65eb3c7e62f94cf7905}{main\+\_\+cd}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em Changes the current working directory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{shell_8c_ac9a6184ab875fdcaf47e9f2532bacccd}{main\+\_\+exit}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em Exits the shell program. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{shell_8c_a78da12091fd568d5a2bdf0209f9bdf4d}{main\+\_\+size\+\_\+built\+In}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of built-\/in shell commands. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell_8c_a11e65f8c532229a11c69bbc450eed1c7}{main\+\_\+read\+\_\+line}} ()
+\begin{DoxyCompactList}\small\item\em Reads a line of input from the user. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell_8c_a4bf255668fbc487f01bccf32b3ee81b7}{main\+\_\+split\+\_\+line}} (char \texorpdfstring{$\ast$}{*}line)
+\begin{DoxyCompactList}\small\item\em Splits a line into tokens (arguments). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{shell_8c_a9f2c306723de2e72f49e4eb6be1e8568}{main\+\_\+launch}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em Launches a program specified in the arguments. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{shell_8c_a77cf9ccab112bc85351252644ffd6680}{main\+\_\+execute}} (char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}args)
+\begin{DoxyCompactList}\small\item\em Executes a command, either built-\/in or external. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{shell_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\begin{DoxyCompactList}\small\item\em Entry point of the shell program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell_8c_abf767eacd9939601a1d625f9e988f649}{built\+In\+\_\+str}} \mbox{[}$\,$\mbox{]} = \{"{}cd"{}, "{}exit"{}\}
+\item 
+int(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{shell_8c_aa69e593df077eba1b3ebca24fc4afe05}{builtin\+\_\+func}} \mbox{[}$\,$\mbox{]})(char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}) = \{\&\mbox{\hyperlink{shell_8c_adda5e3a2405dd65eb3c7e62f94cf7905}{main\+\_\+cd}}, \&\mbox{\hyperlink{shell_8c_ac9a6184ab875fdcaf47e9f2532bacccd}{main\+\_\+exit}}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{shell_8c_a3c04138a5bfe5d72780bb7e82a18e627}\index{shell.c@{shell.c}!main@{main}}
+\index{main@{main}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{shell_8c_a3c04138a5bfe5d72780bb7e82a18e627} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{}\end{DoxyParamCaption})}
+
+
+
+Entry point of the shell program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & The number of command-\/line arguments. \\
+\hline
+{\em argv} & The command-\/line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Exit status code. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{shell_8c_source_l00079}{79}} of file \mbox{\hyperlink{shell_8c_source}{shell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{shell_8c_aa2deaf0f63ca4a73a37b86d05678fb46}{main\_loop}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00083\ \}}
+
+\end{DoxyCode}
+\Hypertarget{shell_8c_adda5e3a2405dd65eb3c7e62f94cf7905}\index{shell.c@{shell.c}!main\_cd@{main\_cd}}
+\index{main\_cd@{main\_cd}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{main\_cd()}{main\_cd()}}
+{\footnotesize\ttfamily \label{shell_8c_adda5e3a2405dd65eb3c7e62f94cf7905} 
+int main\+\_\+cd (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args}{}\end{DoxyParamCaption})}
+
+
+
+Changes the current working directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The arguments passed to the "{}cd"{} command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns 1 to continue the shell loop. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{shell_8c_source_l00121}{121}} of file \mbox{\hyperlink{shell_8c_source}{shell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{if}\ (args[1]\ ==\ NULL)}
+\DoxyCodeLine{00124\ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}\$:\ expected\ argument\ to\ \(\backslash\)"{}cd\(\backslash\)"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (chdir(args[1])\ !=\ 0)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}\$"{}});}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00135\ \}}
+
+\end{DoxyCode}
+\Hypertarget{shell_8c_a77cf9ccab112bc85351252644ffd6680}\index{shell.c@{shell.c}!main\_execute@{main\_execute}}
+\index{main\_execute@{main\_execute}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{main\_execute()}{main\_execute()}}
+{\footnotesize\ttfamily \label{shell_8c_a77cf9ccab112bc85351252644ffd6680} 
+int main\+\_\+execute (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args}{}\end{DoxyParamCaption})}
+
+
+
+Executes a command, either built-\/in or external. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The arguments of the command. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 to continue the shell loop, or 0 to terminate. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{shell_8c_source_l00206}{206}} of file \mbox{\hyperlink{shell_8c_source}{shell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00207\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordflow}{if}\ (args[0]\ ==\ NULL)}
+\DoxyCodeLine{00209\ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{shell_8c_a78da12091fd568d5a2bdf0209f9bdf4d}{main\_size\_builtIn}}();\ i++)}
+\DoxyCodeLine{00213\ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(args[0],\ \mbox{\hyperlink{shell_8c_abf767eacd9939601a1d625f9e988f649}{builtIn\_str}}[i])\ ==\ 0)}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*\mbox{\hyperlink{shell_8c_aa69e593df077eba1b3ebca24fc4afe05}{builtin\_func}}[i])(args);}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \ \ \}}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{shell_8c_a9f2c306723de2e72f49e4eb6be1e8568}{main\_launch}}(args);}
+\DoxyCodeLine{00220\ \}}
+
+\end{DoxyCode}
+\Hypertarget{shell_8c_ac9a6184ab875fdcaf47e9f2532bacccd}\index{shell.c@{shell.c}!main\_exit@{main\_exit}}
+\index{main\_exit@{main\_exit}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{main\_exit()}{main\_exit()}}
+{\footnotesize\ttfamily \label{shell_8c_ac9a6184ab875fdcaf47e9f2532bacccd} 
+int main\+\_\+exit (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args}{}\end{DoxyParamCaption})}
+
+
+
+Exits the shell program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The arguments passed to the "{}exit"{} command (not used). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns 0 to terminate the shell loop. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{shell_8c_source_l00137}{137}} of file \mbox{\hyperlink{shell_8c_source}{shell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00138\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00140\ \}}
+
+\end{DoxyCode}
+\Hypertarget{shell_8c_a9f2c306723de2e72f49e4eb6be1e8568}\index{shell.c@{shell.c}!main\_launch@{main\_launch}}
+\index{main\_launch@{main\_launch}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{main\_launch()}{main\_launch()}}
+{\footnotesize\ttfamily \label{shell_8c_a9f2c306723de2e72f49e4eb6be1e8568} 
+int main\+\_\+launch (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{args}{}\end{DoxyParamCaption})}
+
+
+
+Launches a program specified in the arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The arguments, including the program name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always returns 1 to continue the shell loop. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{shell_8c_source_l00178}{178}} of file \mbox{\hyperlink{shell_8c_source}{shell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00179\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ pid\_t\ pid,\ wpid;}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{int}\ status;}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ pid\ =\ fork();}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordflow}{if}\ (pid\ ==\ 0)}
+\DoxyCodeLine{00185\ \ \ \ \ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (execvp(args[0],\ args)\ ==\ -\/1)}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}\$"{}});}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pid\ <\ 0)}
+\DoxyCodeLine{00193\ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}\$"{}});}
+\DoxyCodeLine{00195\ \ \ \ \ \}}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00197\ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ wpid\ =\ waitpid(pid,\ \&status,\ WUNTRACED);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (!WIFEXITED(status)\ \&\&\ !WIFSIGNALED(status));}
+\DoxyCodeLine{00202\ \ \ \ \ \}}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00204\ \}}
+
+\end{DoxyCode}
+\Hypertarget{shell_8c_aa2deaf0f63ca4a73a37b86d05678fb46}\index{shell.c@{shell.c}!main\_loop@{main\_loop}}
+\index{main\_loop@{main\_loop}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{main\_loop()}{main\_loop()}}
+{\footnotesize\ttfamily \label{shell_8c_aa2deaf0f63ca4a73a37b86d05678fb46} 
+void main\+\_\+loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+The main loop of the shell program. 
+
+
+
+Definition at line \mbox{\hyperlink{shell_8c_source_l00090}{90}} of file \mbox{\hyperlink{shell_8c_source}{shell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{char}\ *line;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{char}\ **args;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{int}\ willContinue;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\$\ "{}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ line\ =\ \mbox{\hyperlink{shell_8c_a11e65f8c532229a11c69bbc450eed1c7}{main\_read\_line}}();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!line)}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Failed\ to\ read\ line\(\backslash\)n"{}});}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ args\ =\ \mbox{\hyperlink{shell_8c_a4bf255668fbc487f01bccf32b3ee81b7}{main\_split\_line}}(line);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!args)}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ free(line);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Failed\ to\ split\ line\(\backslash\)n"{}});}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ willContinue\ =\ \mbox{\hyperlink{shell_8c_a77cf9ccab112bc85351252644ffd6680}{main\_execute}}(args);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ free(line);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ free(args);}
+\DoxyCodeLine{00118\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (willContinue);}
+\DoxyCodeLine{00119\ \}}
+
+\end{DoxyCode}
+\Hypertarget{shell_8c_a11e65f8c532229a11c69bbc450eed1c7}\index{shell.c@{shell.c}!main\_read\_line@{main\_read\_line}}
+\index{main\_read\_line@{main\_read\_line}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{main\_read\_line()}{main\_read\_line()}}
+{\footnotesize\ttfamily \label{shell_8c_a11e65f8c532229a11c69bbc450eed1c7} 
+char \texorpdfstring{$\ast$}{*} main\+\_\+read\+\_\+line (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reads a line of input from the user. 
+
+\begin{DoxyReturn}{Returns}
+The line of input as a dynamically allocated string. Must be freed by the caller. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{shell_8c_source_l00222}{222}} of file \mbox{\hyperlink{shell_8c_source}{shell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00223\ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{char}\ *returnLine\ =\ NULL;}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ bufferSize\ =\ 0;}
+\DoxyCodeLine{00226\ \ \ \ \ ssize\_t\ statusValue\ =\ getline(\&returnLine,\ \&bufferSize,\ stdin);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordflow}{if}\ (statusValue\ ==\ -\/1)}
+\DoxyCodeLine{00229\ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (feof(stdin))}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ exit(EXIT\_SUCCESS);}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ perror(\textcolor{stringliteral}{"{}readline"{}});}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \ \ \ \ free(returnLine);}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ exit(EXIT\_FAILURE);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \}}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordflow}{return}\ returnLine;}
+\DoxyCodeLine{00242\ \}}
+
+\end{DoxyCode}
+\Hypertarget{shell_8c_a78da12091fd568d5a2bdf0209f9bdf4d}\index{shell.c@{shell.c}!main\_size\_builtIn@{main\_size\_builtIn}}
+\index{main\_size\_builtIn@{main\_size\_builtIn}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{main\_size\_builtIn()}{main\_size\_builtIn()}}
+{\footnotesize\ttfamily \label{shell_8c_a78da12091fd568d5a2bdf0209f9bdf4d} 
+int main\+\_\+size\+\_\+built\+In (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the number of built-\/in shell commands. 
+
+\begin{DoxyReturn}{Returns}
+The number of built-\/in commands. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{shell_8c_source_l00085}{85}} of file \mbox{\hyperlink{shell_8c_source}{shell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{shell_8c_abf767eacd9939601a1d625f9e988f649}{builtIn\_str}})\ /\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00088\ \}}
+
+\end{DoxyCode}
+\Hypertarget{shell_8c_a4bf255668fbc487f01bccf32b3ee81b7}\index{shell.c@{shell.c}!main\_split\_line@{main\_split\_line}}
+\index{main\_split\_line@{main\_split\_line}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{main\_split\_line()}{main\_split\_line()}}
+{\footnotesize\ttfamily \label{shell_8c_a4bf255668fbc487f01bccf32b3ee81b7} 
+char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} main\+\_\+split\+\_\+line (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{line}{}\end{DoxyParamCaption})}
+
+
+
+Splits a line into tokens (arguments). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & The input line to split. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dynamically allocated array of tokens. Must be freed by the caller. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{shell_8c_source_l00142}{142}} of file \mbox{\hyperlink{shell_8c_source}{shell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{int}\ bufSize\ =\ 64;}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{int}\ position\ =\ 0;}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{char}\ **tokens\ =\ malloc(bufSize\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *));}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{char}\ *token;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{if}\ (tokens\ ==\ NULL)}
+\DoxyCodeLine{00150\ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Allocation\ Error\(\backslash\)n"{}});}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ token\ =\ strtok(line,\ \textcolor{stringliteral}{"{}\ \(\backslash\)t\(\backslash\)r\(\backslash\)n\(\backslash\)a"{}});}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordflow}{while}\ (token\ !=\ NULL)}
+\DoxyCodeLine{00157\ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ tokens[position]\ =\ token;}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ position++;}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (position\ >=\ bufSize)}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ bufSize\ +=\ bufSize;}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ **temp\ =\ realloc(tokens,\ bufSize\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}\ *));}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp\ ==\ NULL)}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ free(tokens);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fprintf(stderr,\ \textcolor{stringliteral}{"{}Reallocation\ Error\(\backslash\)n"{}});}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ tokens\ =\ temp;}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ token\ =\ strtok(NULL,\ \textcolor{stringliteral}{"{}\ \(\backslash\)t\(\backslash\)r\(\backslash\)n\(\backslash\)a"{}});}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ \ \ \ \ tokens[position]\ =\ NULL;}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordflow}{return}\ tokens;}
+\DoxyCodeLine{00176\ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{shell_8c_aa69e593df077eba1b3ebca24fc4afe05}\index{shell.c@{shell.c}!builtin\_func@{builtin\_func}}
+\index{builtin\_func@{builtin\_func}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{builtin\_func}{builtin\_func}}
+{\footnotesize\ttfamily \label{shell_8c_aa69e593df077eba1b3ebca24fc4afe05} 
+int(\texorpdfstring{$\ast$}{*} builtin\+\_\+func\mbox{[}$\,$\mbox{]})(char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}) (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption}) = \{\&\mbox{\hyperlink{shell_8c_adda5e3a2405dd65eb3c7e62f94cf7905}{main\+\_\+cd}}, \&\mbox{\hyperlink{shell_8c_ac9a6184ab875fdcaf47e9f2532bacccd}{main\+\_\+exit}}\}}
+
+
+
+Definition at line \mbox{\hyperlink{shell_8c_source_l00070}{70}} of file \mbox{\hyperlink{shell_8c_source}{shell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \{\&\mbox{\hyperlink{shell_8c_adda5e3a2405dd65eb3c7e62f94cf7905}{main\_cd}},\ \&\mbox{\hyperlink{shell_8c_ac9a6184ab875fdcaf47e9f2532bacccd}{main\_exit}}\};}
+
+\end{DoxyCode}
+\Hypertarget{shell_8c_abf767eacd9939601a1d625f9e988f649}\index{shell.c@{shell.c}!builtIn\_str@{builtIn\_str}}
+\index{builtIn\_str@{builtIn\_str}!shell.c@{shell.c}}
+\doxysubsubsection{\texorpdfstring{builtIn\_str}{builtIn\_str}}
+{\footnotesize\ttfamily \label{shell_8c_abf767eacd9939601a1d625f9e988f649} 
+char\texorpdfstring{$\ast$}{*} built\+In\+\_\+str\mbox{[}$\,$\mbox{]} = \{"{}cd"{}, "{}exit"{}\}}
+
+
+
+Definition at line \mbox{\hyperlink{shell_8c_source_l00067}{67}} of file \mbox{\hyperlink{shell_8c_source}{shell.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \{\textcolor{stringliteral}{"{}cd"{}},\ \textcolor{stringliteral}{"{}exit"{}}\};}
+
+\end{DoxyCode}
